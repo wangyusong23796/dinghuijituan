@@ -1,0 +1,45 @@
+[ 2015-02-28T14:40:58+08:00 ] ::1 /dinghui/
+SQL: SHOW COLUMNS FROM `ding_category` [ RunTime:0.0355s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `ding_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `ding_document` [ RunTime:0.0348s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `ding_document` WHERE `status` = 1 AND `pid` = 0 AND `create_time` < 1425105657 AND ( deadline = 0 OR deadline > 1425105657 ) ORDER BY `id` DESC  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000480s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000899s ]
+SQL: SHOW COLUMNS FROM `ding_channel` [ RunTime:0.0404s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `ding_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `ding_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0156s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `ding_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000285s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.095957s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018378s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018911s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001575s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001961s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `ding_category` WHERE `id` = 40 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `ding_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.123765s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017311s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.009838s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.025585s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `ding_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`name`,`pid`,`title`,`link_id` FROM `ding_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `ding_document` WHERE `status` = 1 AND `pid` = 0 AND `category_id` IN ('1','39','2') AND `create_time` < 1425105657 AND ( deadline = 0 OR deadline > 1425105657 ) ORDER BY `level` DESC,`id` DESC LIMIT 0,10   [ RunTime:0.0390s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.068424s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.009838s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.076683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002348s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002819s ]
+

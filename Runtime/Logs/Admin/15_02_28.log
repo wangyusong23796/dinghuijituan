@@ -1,0 +1,699 @@
+[ 2015-02-28T14:41:04+08:00 ] ::1 /dinghui/admin.php?s=/Public/login.html
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000364s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000793s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044027s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045458s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001937s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002142s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002550s ]
+
+[ 2015-02-28T14:41:10+08:00 ] ::1 /dinghui/admin.php?s=/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003970s ]
+NOTIC: [8] Undefined index: lite C:\wamp\www\dinghui\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.0332s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `ding_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ding_action` [ RunTime:0.0401s ]
+SQL: SELECT * FROM `ding_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ding_action_log` [ RunTime:0.0218s ]
+SQL: INSERT INTO `ding_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','0','member','1','1425105670','admin在2015-02-28 14:41登录了后台') [ RunTime:0.0292s ]
+SQL: SELECT * FROM `ding_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 1 C:\wamp\www\dinghui\Application\Common\Common\function.php 第 679 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given C:\wamp\www\dinghui\Application\Common\Common\function.php 第 679 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1425019270 LIMIT 1   [ RunTime:0.0246s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.0077s ]
+SQL: UPDATE `ding_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.0173s ]
+SQL: UPDATE `ding_member` SET `login`=`login`+1,`last_login_time`='1425105670',`last_login_ip`='0' WHERE `uid` = 1 [ RunTime:0.0008s ]
+
+[ 2015-02-28T14:41:11+08:00 ] ::1 /dinghui/admin.php?s=/Index/index.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0315s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000491s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000904s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `ding_addons` [ RunTime:0.0331s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.0075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_member` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ding_action_log` [ RunTime:0.0079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_action_log` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ding_document` [ RunTime:0.0077s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_document` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ding_category` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_category` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ding_model` [ RunTime:0.0302s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_model` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000306s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.161347s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016923s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001868s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.155299s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000261s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.195647s ]
+SQL: select version() as v; [ RunTime:0.0248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042863s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.017564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.059079s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.059342s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000241s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.235845s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008111s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.065115s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.071815s ]
+INFO: Run Addons\kaifarenyuan\kaifarenyuanAddon [ RunTime:0.012542s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.227948s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009938s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.065115s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.073569s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002253s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002666s ]
+
+[ 2015-02-28T14:41:14+08:00 ] ::1 /dinghui/admin.php?s=/Config/group.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0084s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0021s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0020s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ding_config` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `ding_config` WHERE `status` = 1 AND `group` = 1 ORDER BY sort  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000722s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.098198s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.098673s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001941s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002124s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002550s ]
+
+[ 2015-02-28T14:41:16+08:00 ] ::1 /dinghui/admin.php?s=/Database/index/type/import.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/index%' ) LIMIT 1   [ RunTime:0.0023s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000609s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001023s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087409s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.087906s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001573s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001961s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002200s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002647s ]
+
+[ 2015-02-28T14:41:17+08:00 ] ::1 /dinghui/admin.php?s=/Database/index/type/export.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0075s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/index%' ) LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW TABLE STATUS [ RunTime:0.2799s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000740s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.123236s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.123659s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001667s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002062s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002122s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002530s ]
+
+[ 2015-02-28T14:41:19+08:00 ] ::1 /dinghui/admin.php?s=/Database/optimize.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004049s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0075s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/optimize%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: OPTIMIZE TABLE `ding_action`,`ding_action_log`,`ding_addons`,`ding_attachment`,`ding_attribute`,`ding_auth_extend`,`ding_auth_group`,`ding_auth_group_access`,`ding_auth_rule`,`ding_category`,`ding_channel`,`ding_config`,`ding_document`,`ding_document_article`,`ding_document_download`,`ding_file`,`ding_hooks`,`ding_member`,`ding_menu`,`ding_model`,`ding_picture`,`ding_ucenter_admin`,`ding_ucenter_app`,`ding_ucenter_member`,`ding_ucenter_setting`,`ding_url`,`ding_userdata` [ RunTime:0.1837s ]
+
+[ 2015-02-28T14:41:20+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003464s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0098s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+
+[ 2015-02-28T14:41:20+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=0&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003462s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0075s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_action` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_action` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_action` LIMIT 0, 1000 [ RunTime:0.0009s ]
+
+[ 2015-02-28T14:41:20+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=1&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003639s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0077s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_action_log` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_action_log` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_action_log` LIMIT 0, 1000 [ RunTime:0.0008s ]
+
+[ 2015-02-28T14:41:21+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=2&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003411s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0076s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0027s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_addons` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_addons` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_addons` LIMIT 0, 1000 [ RunTime:0.0009s ]
+
+[ 2015-02-28T14:41:21+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=3&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003485s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_attachment` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_attachment` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:21+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=4&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003562s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0073s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_attribute` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_attribute` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_attribute` LIMIT 0, 1000 [ RunTime:0.0015s ]
+
+[ 2015-02-28T14:41:21+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=5&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003401s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0075s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_auth_extend` [ RunTime:0.0026s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_auth_extend` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ding_auth_extend` LIMIT 0, 1000 [ RunTime:0.0007s ]
+
+[ 2015-02-28T14:41:21+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=6&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003431s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_auth_group` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_auth_group` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ding_auth_group` LIMIT 0, 1000 [ RunTime:0.0008s ]
+
+[ 2015-02-28T14:41:22+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=7&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003955s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0082s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0027s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0015s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SHOW CREATE TABLE `ding_auth_group_access` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_auth_group_access` [ RunTime:0.0007s ]
+
+[ 2015-02-28T14:41:22+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=8&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003546s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SHOW CREATE TABLE `ding_auth_rule` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_auth_rule` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_auth_rule` LIMIT 0, 1000 [ RunTime:0.0502s ]
+
+[ 2015-02-28T14:41:22+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=9&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003500s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0077s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_category` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_category` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_category` LIMIT 0, 1000 [ RunTime:0.0010s ]
+
+[ 2015-02-28T14:41:22+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=10&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003394s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0083s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0011s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_channel` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_channel` LIMIT 0, 1000 [ RunTime:0.0008s ]
+
+[ 2015-02-28T14:41:22+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=11&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004074s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0089s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0028s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_config` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_config` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_config` LIMIT 0, 1000 [ RunTime:0.0013s ]
+
+[ 2015-02-28T14:41:23+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=12&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004015s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_document` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_document` [ RunTime:0.0005s ]
+
+[ 2015-02-28T14:41:23+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=13&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003828s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW CREATE TABLE `ding_document_article` [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_document_article` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:23+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=14&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005258s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0102s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0014s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0014s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SHOW CREATE TABLE `ding_document_download` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_document_download` [ RunTime:0.0007s ]
+
+[ 2015-02-28T14:41:23+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=15&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003429s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_file` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_file` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:23+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=16&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003946s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0073s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_hooks` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_hooks` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_hooks` LIMIT 0, 1000 [ RunTime:0.0008s ]
+
+[ 2015-02-28T14:41:24+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=17&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003416s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_member` [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_member` LIMIT 0, 1000 [ RunTime:0.0007s ]
+
+[ 2015-02-28T14:41:24+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=18&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003466s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0079s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0009s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0011s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW CREATE TABLE `ding_menu` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_menu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ding_menu` LIMIT 0, 1000 [ RunTime:0.0021s ]
+
+[ 2015-02-28T14:41:24+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=19&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003429s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0076s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_model` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_model` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_model` LIMIT 0, 1000 [ RunTime:0.0009s ]
+
+[ 2015-02-28T14:41:24+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=20&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003459s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0076s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SHOW CREATE TABLE `ding_picture` [ RunTime:0.0027s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_picture` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:24+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=21&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002105s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003490s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_ucenter_admin` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_ucenter_admin` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:25+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=22&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003589s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0075s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_ucenter_app` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_ucenter_app` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:25+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=23&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003766s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0027s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_ucenter_member` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_ucenter_member` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `ding_ucenter_member` LIMIT 0, 1000 [ RunTime:0.0007s ]
+
+[ 2015-02-28T14:41:25+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=24&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003415s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0099s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_ucenter_setting` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_ucenter_setting` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:25+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=25&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003470s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_url` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_url` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:25+08:00 ] ::1 /dinghui/admin.php?s=/Database/export.html&id=26&start=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003445s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/export%' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 86 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0009s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SHOW CREATE TABLE `ding_userdata` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS count FROM `ding_userdata` [ RunTime:0.0006s ]
+
+[ 2015-02-28T14:41:28+08:00 ] ::1 /dinghui/admin.php?s=/Database/index/type/import.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0029s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/index%' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0013s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0012s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000379s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000672s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065294s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065680s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000963s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001148s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001403s ]
+
+[ 2015-02-28T14:41:32+08:00 ] ::1 /dinghui/admin.php?s=/Database/del/time/1424944023.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/del%' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+
+[ 2015-02-28T14:41:34+08:00 ] ::1 /dinghui/admin.php?s=/Database/index/type/import.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0029s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Database/index%' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000235s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000392s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026709s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026892s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000869s ]
+
