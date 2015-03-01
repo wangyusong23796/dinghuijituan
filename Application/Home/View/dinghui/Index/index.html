@@ -1,48 +1,96 @@
 <extend name="Base/common"/>
 
-<block name="header">
-    <header class="jumbotron subhead" id="overview">
-        <div class="container">
-            <h2>源自相同起点，演绎不同精彩！</h2>
-            <p class="lead"></p>
-        </div>
-    </header>
-</block>
-
-<block name="side">
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            {:W('Category/lists', array(1, true))}
-			{:W('Category/lists', array(40, true))}
-        </ul>
-    </div>
-</block>
-
 <block name="body">
-    <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
-            <article:list name="article" category="1" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$article.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$article['id'])}">查看全文</a></span>
-                    <span class="pull-right">
-                        <span class="author">{$article.uid|get_username}</span>
-                        <span>于 {$article.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($article['category_id']))}">{$article.category_id|get_category_title}</a></span> ( 阅读：{$article.view} )
-                    </span>
-                </div>
-                <hr/>
-            </article:list>
+<ul class="banner">
+    <li class="banner1"></li>
+    <li class="banner2"></li>
+    <li class="banner3"></li>
+    <li class="banner4"></li>
+    <li class="banner5"></li>   
+</ul>
+<!--banner_button-->
+<div class="banner_but">
+    <ul class="banner_button">
+        <li class="banner_button1on"></li>
+        <li class="banner_button1"></li>
+        <li class="banner_button1"></li>
+        <li class="banner_button1"></li>
+        <li class="banner_button1"></li>
+    </ul>    
+</div>
 
-        </section>
+
+
+
+<!--关于我们-->
+<div class="About">
+	<div class="About_box">
+    	<div class="About_1"></div>
+        <div class="About_2">
+        	<a href="#"><p class="About_2a" title="沈阳鼎辉集团">沈阳鼎辉集团</p></a>
+            <p class="About_2b">鼎辉集团是集财富管理、信用风险评估与管理、信用数据整合服务、
+小微借款咨询服务与交易促成等业务于一体的综合性现代服务业企
+业。公司经国家发改委批准，在工商局注册，注册资本1亿元人民
+币。鼎辉具备强大背景资源与雄厚的资金实力，秉承“持诚信自强
+不息，秉共享厚德载物”的理念，创立鼎辉财富。鼎辉财富汇聚国
+内外知名院校金融专业精英人士，组成资深专家研发团队，涉及银
+行、证券、私募、基金、保险等诸多行业。在投资理财、产品设计
+风险控制等领域拥有专业理论知识和丰富实战经验。<a href="#">&nbsp;[查看更多]</a></p>
+        </div>
+        <a href="#"><div class="About_3" title="沈阳鼎辉集团"></div></a>
     </div>
+</div>
+
+
+<!--最新资讯-->
+<div class="News">
+	<div class="News_box">
+    	<div class="News_1"></div>
+        <div class="News_2">
+        	<a href="#"><ul class="News_2ul" style="margin-top:8px;">
+            	<li class="News_2ul1">01</li>
+                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
+                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
+            </ul></a>
+           <a href="#"><ul class="News_2ul">
+            	<li class="News_2ul1">02</li>
+                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿网贷交易额有望达万亿网贷交易额有望达万亿网贷交易额有望达万亿</li>
+                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年许多业内人士认为是属于互联网金融发展的元年许多业内人士认为是属于互联网金融发展的元年，在这一</li>
+            </ul></a>
+            <a href="#"><ul class="News_2ul">
+            	<li class="News_2ul1">03</li>
+                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
+                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
+            </ul></a>
+            <a href="#"><ul class="News_2ul">
+            	<li class="News_2ul1">04</li>
+                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
+                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
+            </ul></a>
+            <a href="#"><ul class="News_2ul">
+            	<li class="News_2ul1">05</li>
+                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
+                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
+            </ul></a>
+        </div>
+        <div class="News_3">
+        	<a href="#"><ul class="News_3ul">
+            	<img src="images/News_3ul1.png" />
+            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
+            </ul></a>
+            <a href="#"><ul class="News_3ul">
+            	<img src="images/News_3ul2.png" />
+            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
+            </ul></a>
+            <a href="#"><ul class="News_3ul">
+            	<img src="images/News_3ul3.png" />
+            	<li class="News_3ul1">居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联</li>
+            </ul></a>
+           <a href="#"> <ul class="News_3ul">
+            	<img src="images/News_3ul4.png" />
+            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
+            </ul></a>
+        </div>
+    </div>
+</div>
 </block>

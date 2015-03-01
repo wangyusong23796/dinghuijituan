@@ -1,47 +1,67 @@
 <!-- 导航条
 ================================================== -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="brand" href="{:U('index/index')}">OneThink</a>
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <think:nav name="nav">
-                    	<eq name="nav.pid" value="0">
-                        <li>
-                            <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
-                        </li>
-                        </eq>
-                    </think:nav>
-                </ul>
-            </div>
-            <div class="nav-collapse collapse pull-right">
-                <if condition="is_login()">
-                    <ul class="nav" style="margin-right:0">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:0;padding-right:0">{:get_username()} <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{:U('User/profile')}">修改密码</a></li>
-                                <li><a href="{:U('User/logout')}">退出</a></li>
-                            </ul>
-                        </li>
+<div class="top">
+    <div class="topbox">        
+        <div class="topbox1">
+            <!--top中的内容-->
+            <a href="#"><div class="topbox_1"></div></a>
+            <ul class="topbox_2">
+                <li class="topbox_2a topbox_2a1"><a href="#">快速注册</a></li>
+                <li class="topbox_2b">|</li>
+                <li class="topbox_2a topbox_2a1"><a href="#">立即登录</a></li>
+                <li class="topbox_2b">|</li>
+                <li class="topbox_2a"><a href="#">设为首页</a></li>
+                <li class="topbox_2b">|</li>
+                <li class="topbox_2a"><a href="#">加入收藏</a></li>
+            </ul>
+            <!--导航-->
+            <ul class="Halo">
+                <a href="#"><li class="Halo_1" style="width:152px; margin-left:0px;">首页</li></a>
+                <li class="Halo_2">我要理财
+                    <ul class="Halo_2a">
+                        <a href="#"><li>如何理财</li></a>
+                        <a href="#"><li>我要理财</li></a>
                     </ul>
-                <else/>
-                    <ul class="nav" style="margin-right:0">
-                        <li>
-                            <a href="{:U('User/login')}">登录</a>
-                        </li>
-                        <li>
-                            <a href="{:U('User/register')}" style="padding-left:0;padding-right:0">注册</a>
-                        </li>
+                </li>
+                <li class="Halo_2">我要借款
+                    <ul class="Halo_2a">
+                        <a href="#"><li>我要借款</li></a>
+                        <a href="#"><li>如何借款</li></a>
                     </ul>
-                </if>
-            </div>
-        </div>
+                </li>
+                <li class="Halo_2">产品介绍
+                    <ul class="Halo_2a">
+                        <a href="#"><li>产品介绍</li></a>
+                    </ul>
+                </li>
+                <li class="Halo_2">最新动态
+                    <ul class="Halo_2a">
+                        <a href="#"><li>最新动态</li></a>
+                        <a href="#"><li>媒体报道</li></a>
+                        <a href="#"><li>行业新闻</li></a>
+                        <a href="#"><li>专题报道</li></a>
+                    </ul>
+                </li>
+                <li class="Halo_2">社会责任
+                    <ul class="Halo_2a">
+                        <a href="#"><li>社会责任动态</li></a>
+                        <a href="#"><li>社会责任理念</li></a>
+                        <a href="#"><li>社会责任项目</li></a>
+                        <a href="#"><li>志愿者</li></a>
+                    </ul>
+                </li>
+                <li class="Halo_2">关于我们
+                    <ul class="Halo_2a">
+                        <a href="#"><li>关于我们</li></a>
+                        <a href="#"><li>发展历程</li></a>
+                        <a href="#"><li>企业文化</li></a>
+                        <a href="#"><li>联系我们</li></a>
+                        <a href="#"><li>合作机构</li></a>
+                        <a href="#"><li>招聘信息</li></a>
+                    </ul>
+                </li>
+            </ul>
+            <!--导航-->
+        </div> 
     </div>
 </div>
