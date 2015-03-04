@@ -31,7 +31,7 @@ use Common\Controller\Addon;
         public function top5($param){
         	
 
-        	$this->assign('data',M('document')->select());
+        	$this->assign('data',M('document')->order('id desc')->select());
 			$this->display('widget');
         }
 

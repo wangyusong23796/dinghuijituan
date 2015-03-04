@@ -25,7 +25,7 @@ class IndexController extends HomeController {
         $this->assign('category',$category);//栏目
         $this->assign('lists',$lists);//列表
        	//$this->assign('page',D('Document')->page);//分页
-		$this->news_pic = M('Document')->where('category_id = 54 and LENGTH(pic_url)>0')->select();
+		$this->news_pic = M('Document')->where('category_id = 54 and LENGTH(pic_url)>0')->order('id desc')->select();
         $this->display();
     }
     

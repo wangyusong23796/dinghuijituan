@@ -14746,3 +14746,205 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
 
+[ 2015-03-04T09:59:07+08:00 ] 127.0.0.1 /ding/admin.php?s=/Config/group.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_config` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `ding_config` WHERE `status` = 1 AND `group` = 1 ORDER BY sort  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-03-04T09:59:07+08:00 ] 127.0.0.1 /ding/admin.php?s=/Addons/index.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Addons/index%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 43 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 43  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 43 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '扩展' AND `pid` = 43 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0100s ]
+SQL: SELECT `id`,`name`,`title`,`description`,`status`,`config`,`author`,`version`,`create_time`,`has_adminlist` FROM `ding_addons` WHERE `name` IN ('Attachment','Editor','EditorForAdmin','SiteStat','SocialComment','SystemInfo','kaifarenyuan','loadjs','top5')  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.010000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `ding_addons` [ RunTime:0.0100s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'kaifarenyuan' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'loadjs' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'top5' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'SocialComment' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'Attachment' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'Editor' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-03-04T09:59:08+08:00 ] 127.0.0.1 /ding/admin.php?s=/Config/group.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_config` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `ding_config` WHERE `status` = 1 AND `group` = 1 ORDER BY sort  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-03-04T09:59:09+08:00 ] 127.0.0.1 /ding/admin.php?s=/User/index.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%User/index%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 16  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 16 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '用户管理' AND `pid` = 16 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '行为管理' AND `pid` = 16 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_member` WHERE `status` >= 0 AND `nickname` LIKE '%%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `ding_member` WHERE `status` >= 0 AND `nickname` LIKE '%%' ORDER BY uid desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-03-04T09:59:09+08:00 ] 127.0.0.1 /ding/admin.php?s=/Article/index.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Article/index%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ding_menu` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `ding_menu` WHERE `group` <> '' AND `pid` = 2  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `ding_menu` WHERE `pid` = 2 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ding_menu` WHERE `group` = '内容' AND `pid` = 2 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_auth_group_access` [ RunTime:0.0000s ]
+SQL: SELECT `extend_id` FROM ding_auth_group_access g INNER JOIN ding_auth_extend c on g.group_id=c.group_id  WHERE ( g.uid='1' and c.type='1' and !isnull(extend_id) )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_category` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`pid`,`allow_publish` FROM `ding_category` WHERE `status` = 1 ORDER BY pid,sort  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_model` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ding_model` WHERE `name` = 'document' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_document` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM ding_document DOCUMENT WHERE `status` IN ('0','1','2') AND `pid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`type`,`update_time`,`status`,`view`,`category_id`,`model_id`,`pid` FROM ding_document DOCUMENT WHERE `status` IN ('0','1','2') AND `pid` = 0 ORDER BY level DESC,DOCUMENT.id DESC LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SELECT `extend` FROM `ding_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_attribute` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name`,`type`,`extra` FROM `ding_attribute` WHERE `model_id` = 1  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: groups D:\wwwroot\ding\Application\Admin\Controller\ArticleController.class.php 第 231 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.010000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-03-04T09:59:10+08:00 ] 127.0.0.1 /ding/admin.php?s=/Index/index.html
+SQL: SHOW COLUMNS FROM `ding_menu` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`url` FROM `ding_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `ding_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `ding_addons` [ RunTime:0.0000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_member` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_member` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_action_log` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_action_log` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_document` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_document` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_category` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_category` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ding_model` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ding_model` LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.030000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.020000s ]
+SQL: SELECT `config` FROM `ding_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.040000s ]
+SQL: select version() as v; [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.010000s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.010000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.040000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.010000s ]
+INFO: Run Addons\kaifarenyuan\kaifarenyuanAddon [ RunTime:0.000000s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.030000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

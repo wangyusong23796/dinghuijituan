@@ -119,7 +119,7 @@
 	<ul class="relationship_box">
     	<li class="relationship_1"><a href="/ding/index.php">首页</a></li>
         <li class="relationship_2">-</li>
-        <li class="relationship_1"><a href="<?php echo U('Article/index',array('category'=>$fid['name']));?>"><?php echo ($fid["title"]); ?></a></li>
+        <li class="relationship_1"><!-- <a href="<?php echo U('Article/index',array('category'=>$fid['name']));?>"> --><?php echo ($fid["title"]); ?><!-- </a> --></li>
         <li class="relationship_2">-</li>
         <li class="relationship_1"><?php echo ($category["title"]); ?></li>
     </ul>

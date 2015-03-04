@@ -75,9 +75,7 @@ class ArticleController extends HomeController {
 		if(!($id && is_numeric($id))){
 			$this->error('文档ID错误！');
 		}
-		$fid            =   M('category')->where('id ='.$category["pid"].'')->find();
-		
-		$this->assign('fid',$fid);
+
 
 		/* 页码检测 */
 		$p = intval($p);
@@ -92,7 +90,12 @@ class ArticleController extends HomeController {
 
 		/* 分类信息 */
 		$category = $this->category($info['category_id']);
-
+		
+		$fid            =   M('category')->where('id ='.$category["pid"].'')->find();
+		
+		$this->assign('fid',$fid);
+		
+		
 		/* 获取模板 */
 		if(!empty($info['template'])){//已定制模板
 			$tmpl = $info['template'];
@@ -140,23 +143,5 @@ class ArticleController extends HomeController {
 	
 	
 	
-	//单页显示
-	public function odd($category = NULL,$type = NULL)
-	{
-		$info = $this->category($category);
-		$data = array();
-		if ($info[model]['0'] != 4)
-			$this->redirect('Index/index');
-		//判断单页内容是否存在
-		if (empty($type))
-			$this->redirect('Index/index');
-		
-		$article = D('Document')->Get_content($type);
-		$content = D("Document_odd")->where('id ='.$article['id'].'')->find();
-		$data[] = $article;
-		$data[] = $content;
-		//赋值到模板
-		$this->data = $data;
-		$this->display();
-	}
+
 }
