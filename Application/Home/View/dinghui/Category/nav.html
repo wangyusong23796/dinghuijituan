@@ -1,0 +1,28 @@
+<volist name="category" id="cate">
+	<eq name="current" value="$cate['id']">
+		<a href="{:U('Article/lists?category='.$cate['name'])}">
+		<li class="content_left1">
+				{$cate.title}
+		</li>
+		</a>
+	<else/>
+
+
+
+			<if condition="($cate['model'] eq 4)">
+				<a href="{:U('Article/index?category='.$cate['name'])}">
+				<li class="content_left1">
+					{$cate.title}
+				</li>
+				</a>
+			<else/>
+				<a href="{:U('Article/lists?category='.$cate['name'])}">
+				<li class="content_left1">
+					{$cate.title}
+				</li>
+				</a>
+			</if>
+			
+
+	</eq>
+</volist>

@@ -1,0 +1,22 @@
+<!--页面关系-->
+<block name="main">
+
+<div class="relationship">
+	<ul class="relationship_box">
+    	<li class="relationship_1"><a href="__APP__">首页</a></li>
+        <li class="relationship_2">-</li>
+        <li class="relationship_1"><a href="{:U('Article/index',array('category'=>$fid['name']))}">{$fid.title}</a></li>
+        <li class="relationship_2">-</li>
+        <li class="relationship_1">{$category.title}</li>
+    </ul>
+</div>
+</block>
+
+<block name="nav">
+	<div class="content">
+        <!--左侧-->
+    <ul class="content_left">
+    	{:W('Category/nav', array($category['pid'], true))}
+    </ul>
+    
+</block>

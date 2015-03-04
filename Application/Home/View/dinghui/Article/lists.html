@@ -1,41 +1,84 @@
-<extend name="Base/common"/>
+<extend name="Base/news_tem"/>
 
-<block name="header">
-	<header class="jumbotron subhead" id="overview">
-		<div class="container">
-			<h2>源自相同起点，演绎不同精彩！</h2>
-			<p class="lead"></p>
-		</div>
-	</header>
+
+<block name="head">
+<title>{:C('WEB_SITE_TITLE')}-{$category.title}</title>
+<link href="__CSS__/lists.css" rel="stylesheet" type="text/css" />
+<link href="__CSS__/about.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="__JS__/jquery-1.7.2.js"></script>
+<!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
+{:hook('pageHeader')}
+
+<script language="javascript">  
+$(function(){
+        
+    /*top*/
+    $(".topbox_2 .topbox_2a").mouseenter(function(){
+        $(this).addClass("topbox_2aon").siblings().removeClass("topbox_2aon");
+    }).mouseleave(function(){
+        $(this).removeClass("topbox_2aon");
+    }); 
+    
+    /*导航鼠标经过事件*/
+    $(".Halo_2,.Halo_1").mouseenter(function(){
+        $(this).children().first().slideDown();
+    }).mouseleave(function(){
+        $(this).children().first().slideUp();   
+    });
+    
+    /*左导航的点击变色*/
+    $(".content_left").children().click(function(){
+        $(this).attr("class","content_left2").siblings().attr("class","content_left1");
+    });
+    
+    /**/
+    $(".news2").mouseenter(function(){
+        $(this).children().first().addClass("news2dton");
+    }).mouseleave(function(){
+        $(this).children().first().removeClass("news2dton");
+    });
+        /**/
+    $(".media").mouseenter(function(){
+        $(this).children().addClass("media3on");
+    }).mouseleave(function(){
+        $(this).children().removeClass("media3on");
+    });
+});
+
+</script>
+</block>
+
+<block name="banner">
+	<div class="banner"></div>
 </block>
 
 <block name="body">
-      <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
 
-			<volist name="list" id="data">
-				<div class="">
-					<h3 class="ellipsis"><a href="{:U('Article/detail?id='.$data['id'])}">{$data.title}</a></h3>
-				</div>
-				<div>
-					<p class="lead">{$data.description}</p>
-				</div>
-				<div>
-					<span><a href="{:U('Article/detail?id='.$data['id'])}">查看全文</a></span>
-					<span class="pull-right">
-						<span class="author">{$data.uid|get_username}</span>&nbsp;&nbsp;
-						<span>发表于 {$data.create_time|date='Y-m-d H:i:s',###}</span>
-						<span>阅读({$data.view})</span>&nbsp;&nbsp;
-                    </span>
-				</div>
-				<hr/>
-	        </volist>
+<!--内容-->
 
-            <div class="onethink pagination pagination-right pagination-large">
-                <article:page cate="$category['id']" listrow="$category['list_row']" />
-            </div>
-        </section>
-      </div>
+	<!--右侧-->
+    <div class="content_right">
+    	<!--以后替换的-->
+      <div class="news">
+        	<p class="news1">{$category.title}</p>	
+           
+
+            <?php foreach($list as $value):?>
+            <a href="{:U('/Article/detail/?id='.$value['id'])}"> <ul class="media">
+                <li class="media1" title="{$value.title}"><img src="{$value.pic_url}" /></li>
+                <li class="media2">{$value.title}</li>
+                <li class="media3">{$value.description}</li>
+            </ul></a>
+            <?php endforeach;?>
+
+            
+            <ul class="news3">
+                {:$page}
+            </ul>
+
+    
+        </div>
+    </div>
+</div>
+
 </block>

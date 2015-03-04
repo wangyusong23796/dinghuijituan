@@ -63,6 +63,7 @@ class MemberModel extends Model{
      * @return void
      */
     public function logout(){
+    	session('nikename',null);
         session('user_auth', null);
         session('user_auth_sign', null);
     }
@@ -80,13 +81,16 @@ class MemberModel extends Model{
             'last_login_ip'   => get_client_ip(1),
         );
         $this->save($data);
-
+        
+       
+        
         /* 记录登录SESSION和COOKIES */
         $auth = array(
             'uid'             => $user['uid'],
             'username'        => get_username($user['uid']),
             'last_login_time' => $user['last_login_time'],
-        );
+        	'nikename'        => $user['name'],
+         );
 
         session('user_auth', $auth);
         session('user_auth_sign', data_auth_sign($auth));

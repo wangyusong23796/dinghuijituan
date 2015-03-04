@@ -1,0 +1,80 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{padding:0; margin:0; font-size:12px; font-family:"宋体";}
+a{text-decoration:none;}
+img{display:block;border:none 0;}
+li{list-style:none;}
+
+/*top*/
+.one_first{height:2px; background-color:red;}
+.top{height:120px; background-image:url(../images/top.png); background-repeat:repeat-x;}
+.topbox{width:1100px; height:80px; margin:auto;}
+.topbox_1{width:171px; height:62px; background-image:url(../images/topbox_1.png); float:left; margin-top:7px;}
+.topbox_2{width:660px; height:80px; float:left; background-image:url(../images/topbox_2.jpg); background-repeat:no-repeat;}
+.topbox_3{height:80px; float:right; text-align:right; line-height:80px; font-size:24px; font-weight:bold; color:#aaaaaa; letter-spacing:5px;}
+
+/*Registration*/
+.Registration{width:1098px; height:auto; border:#c4c4c4 1px solid; background-color:white; margin:auto;}
+.register1{width:1098px; height:105px;}
+.register1_a{float:left; font-size:24px; font-weight:bold; letter-spacing:5px; padding-top:40px; padding-left:235px; color:#5e5e5e;}
+.register1_b{float:left; padding-top:48px; letter-spacing:2px; padding-left:30px; color:#555555;}
+.register1_b a{color:#3e74e1;}
+.register1_b a:hover{text-decoration:underline;}
+
+.register_box{width:1098px; height:65px;}
+.register_box1{width:300px; height:36px; float:left; text-align:right; line-height:36px; letter-spacing:3px; font-size:14px; color:#555; margin-top:4px;}
+.register_box1 span{color:red;}
+.register_box2{width:305px; float:left; padding-left:3px; font-size:14px; letter-spacing:2px; height:34px; border:#cccccc 1px solid; margin-top:4px; line-height:34px;}
+
+.register_box3{width:300px; height:65px; float:left;}
+.register_box3a{width:240px; height:39px; float:left; margin-left:5px; letter-spacing:1px; color:#555; overflow:hidden; padding-top:4px; padding-left:13px; background-image:url(../images/register_box3a.png); line-height:18px; display:none;}
+.register_box3b{width:220px; height:26px; float:left; margin-left:5px; margin-top:9px; line-height:26px; padding-left:33px; letter-spacing:1px; color:#555; overflow:hidden; background-image:url(../images/register_box3b.png); display:none;}
+.register_box3c{width:14px; height:14px; background-image:url(../images/register_box3c.png); float:left; margin-top:15px; margin-left:5px; display:none;}
+
+.register_div{width:1098px; height:36px;}
+.register_div p{padding-left:348px; letter-spacing:2px; color:#555;}
+.register_div p a{color:#3e74e1;}
+.register_div p a:hover{text-decoration:underline;}
+.register_div p input{vertical-align:text-bottom;margin-bottom:-1px;*margin-bottom:-4px;}
+
+.register_button{width:1098px; height:100px; position:relative;}
+.register_button1{width:270px; height:36px; border:none; background-image:url(../images/register_button1.jpg); font-size:14px; font-weight:bold; letter-spacing:3px; color:white; cursor:pointer; float:left; margin-left:318px;}
+.register_button1:hover{background-image:url(../images/register_button1a.jpg);}
+.register_button2{width:270px; height:36px; position:absolute; top:opx; left:318px; font-size:14px; font-weight:bold; letter-spacing:3px; color:white; line-height:36px; text-align:center; background-image:url(../images/register_button2.png);}
+
+
+/*bottom*/
+.bottom1{width:1100px; height:auto; margin:auto;}
+.bottom1_a{width:1100px; overflow:hidden; padding-top:25px;}
+.bottom1_a dd{height:24px; float:left;margin-right:25px; line-height:24px;}
+.bottom1_a dd a{font-size:14px; letter-spacing:2px; color:#9a9a9a; }
+.bottom1_a dd a:hover{color:#b30005;}
+
+.bottom1_b{width:1100px; overflow:hidden; padding-top:20px; padding-bottom:30px;}
+.bottom1_b1{width:98px; height:30px; float:left; background-image:url(../images/bottom1_b1.png); cursor:pointer;}
+.bottom1_b1:hover{background-image:url(../images/bottom1_b1a.png);}
+.bottom1_b1a{background-image:url(../images/bottom1_b1a.png);}
+.bottom1_b2{width:91px; height:30px; float:left; background-image:url(../images/bottom1_b2.png); cursor:pointer; margin-left:30px;}
+.bottom1_b2:hover{background-image:url(../images/bottom1_b2a.png);}
+.bottom1_b2a{background-image:url(../images/bottom1_b2a.png);}
+
+
+.bottom3{width:1100px; overflow:hidden; margin:auto; padding-bottom:30px; padding-top:20px;}
+.bottom3_left{width:183px; height:66px; background-image:url(../images/bottom3_left.png); float:left;}
+.bottom3_right{width:917px; height:66px; float:left;}
+
+.bottom3_right1{width:880px; height:18px; line-height:18px; padding-top:18px; padding-left:30px; letter-spacing:2px; color:#9a9a9a;}
+.bottom3_right2{width:880px; height:18px; line-height:18px; padding-top:8px; padding-left:30px; letter-spacing:2px; color:#9a9a9a;}
+
+.weiwei{width:300px; display:none; height:300px; background-color:#FFF; background-image:url(../images/xinxin.png); background-repeat:no-repeat; background-position:center;margin:auto;left:0; right:0; bottom:0px; top:0px; position: fixed;box-shadow:0px 0px 10px #afafaf;
+-moz-box-shadow:0px 0px 10px #afafaf;
+-webkit-box-shadow:0px 0px 10px #afafaf;}
+.weiwei_button{width:16px; height:16px; border:none; background-image:url(../images/weiwei_button.png); background-color:white; float:right; margin-top:15px; margin-right:15px; cursor:pointer;}
+.weiwei_button:hover{background-image:url(../images/weiwei_buttona.png);}
+
+
+.xinxin{width:300px; display:none; height:300px; background-color:#FFF; background-image:url(../images/xinxin.png); background-repeat:no-repeat; background-position:center;margin:auto;left:0; right:0; bottom:0px; top:0px; position: fixed;box-shadow:0px 0px 10px #afafaf;
+-moz-box-shadow:0px 0px 10px #afafaf;
+-webkit-box-shadow:0px 0px 10px #afafaf;}
+.xinxin_button{width:16px; height:16px; border:none; background-image:url(../images/weiwei_button.png); background-color:white; float:right; margin-top:15px; margin-right:15px; cursor:pointer;}
+.xinxin_button:hover{background-image:url(../images/weiwei_buttona.png);}

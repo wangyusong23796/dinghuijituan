@@ -2,26 +2,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title><?php echo C('WEB_SITE_TITLE');?></title>
+	
+<title><?php echo C('WEB_SITE_TITLE');?></title>
 <link href="/ding/Public/Home/css/index.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="/ding/Public/Home/js/jquery-1.7.2.js"></script>
 <!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
 <?php echo hook('pageHeader');?>
+
 
 </head>
 <body>
 	<!-- 头部 -->
 	<!-- 导航条
 ================================================== -->
+
 <div class="top">
     <div class="topbox">        
         <div class="topbox1">
             <!--top中的内容-->
-            <a href="#"><div class="topbox_1"></div></a>
+            <a href="/ding/index.php"><div class="topbox_1"></div></a>
             <ul class="topbox_2">
-                <li class="topbox_2a topbox_2a1"><a href="#">快速注册</a></li>
-                <li class="topbox_2b">|</li>
-                <li class="topbox_2a topbox_2a1"><a href="#">立即登录</a></li>
+
+
+
+
+                <?php if(is_login()): ?><li class="topbox_2a topbox_2a1" ><a href="<?php echo U('Main/index');?>"><?php echo session('nikename');?></a></li>
+                    <li class="topbox_2b">|</li>
+                    <li class="topbox_2a topbox_2a1"><a href="<?php echo U('User/logout');?>">退出</a></li>
+                <?php else: ?>
+                    <li class="topbox_2a topbox_2a1"><a href="<?php echo U("User/register");?>">快速注册</a></li>
+                    <li class="topbox_2b">|</li>
+                    <li class="topbox_2a topbox_2a1"><a href="<?php echo U("User/login");?>">立即登录</a></li><?php endif; ?>
                 <li class="topbox_2b">|</li>
                 <li class="topbox_2a"><a href="#">设为首页</a></li>
                 <li class="topbox_2b">|</li>
@@ -29,61 +40,63 @@
             </ul>
             <!--导航-->
             <ul class="Halo">
-                <a href="#"><li class="Halo_1" style="width:152px; margin-left:0px;">首页</li></a>
+                <a href="/ding/index.php"><li class="Halo_1" style="width:152px; margin-left:0px;">首页</li></a>
+
+
                 <li class="Halo_2">我要理财
                     <ul class="Halo_2a">
-                        <a href="#"><li>如何理财</li></a>
-                        <a href="#"><li>我要理财</li></a>
+                        <?php echo W('Category/lists', array('financing', true));?>
                     </ul>
                 </li>
+                
                 <li class="Halo_2">我要借款
                     <ul class="Halo_2a">
-                        <a href="#"><li>我要借款</li></a>
-                        <a href="#"><li>如何借款</li></a>
+                        <?php echo W('Category/lists', array('loan', true));?>
                     </ul>
                 </li>
+
                 <li class="Halo_2">产品介绍
                     <ul class="Halo_2a">
-                        <a href="#"><li>产品介绍</li></a>
+                        <?php echo W('Category/lists', array('product', true));?>
                     </ul>
                 </li>
+
                 <li class="Halo_2">最新动态
                     <ul class="Halo_2a">
-                        <a href="#"><li>最新动态</li></a>
-                        <a href="#"><li>媒体报道</li></a>
-                        <a href="#"><li>行业新闻</li></a>
-                        <a href="#"><li>专题报道</li></a>
+                        <?php echo W('Category/lists', array('news', true));?>
                     </ul>
                 </li>
+
                 <li class="Halo_2">社会责任
                     <ul class="Halo_2a">
-                        <a href="#"><li>社会责任动态</li></a>
-                        <a href="#"><li>社会责任理念</li></a>
-                        <a href="#"><li>社会责任项目</li></a>
-                        <a href="#"><li>志愿者</li></a>
+                        <?php echo W('Category/lists', array('world', true));?>
                     </ul>
                 </li>
+
                 <li class="Halo_2">关于我们
                     <ul class="Halo_2a">
-                        <a href="#"><li>关于我们</li></a>
+                         <?php echo W('Category/lists', array('about', true));?>
+
+<!--                         <a href="#"><li>关于我们</li></a>
                         <a href="#"><li>发展历程</li></a>
                         <a href="#"><li>企业文化</li></a>
                         <a href="#"><li>联系我们</li></a>
                         <a href="#"><li>合作机构</li></a>
-                        <a href="#"><li>招聘信息</li></a>
+                        <a href="#"><li>招聘信息</li></a> -->
                     </ul>
                 </li>
+
+
             </ul>
             <!--导航-->
         </div> 
     </div>
 </div>
+
 	<!-- /头部 -->
-
-
-	<!-- 身体 -->
+	<!-- bannerstart -->
 	
-<ul class="banner">
+    <ul class="banner">
     <li class="banner1"></li>
     <li class="banner2"></li>
     <li class="banner3"></li>
@@ -102,9 +115,14 @@
 </div>
 
 
+	
+	<!-- bannerend -->
 
-
+	<!-- 身体 -->
+	
 <!--关于我们-->
+
+
 <div class="About">
 	<div class="About_box">
     	<div class="About_1"></div>
@@ -129,49 +147,20 @@
 	<div class="News_box">
     	<div class="News_1"></div>
         <div class="News_2">
-        	<a href="#"><ul class="News_2ul" style="margin-top:8px;">
-            	<li class="News_2ul1">01</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
-           <a href="#"><ul class="News_2ul">
-            	<li class="News_2ul1">02</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿网贷交易额有望达万亿网贷交易额有望达万亿网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年许多业内人士认为是属于互联网金融发展的元年许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
-            <a href="#"><ul class="News_2ul">
-            	<li class="News_2ul1">03</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
-            <a href="#"><ul class="News_2ul">
-            	<li class="News_2ul1">04</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
-            <a href="#"><ul class="News_2ul">
-            	<li class="News_2ul1">05</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
+                <!-- top5 hook -->
+                <?php echo hook('top5');?>
         </div>
         <div class="News_3">
-        	<a href="#"><ul class="News_3ul">
-            	<img src="images/News_3ul1.png" />
-            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
+            <?php $i = 0?>
+            <?php foreach($news_pic as $value):?>
+        	<a href="<?php echo U('/Article/detail/?id='.$value['id']);?>"><ul class="News_3ul">
+            	<img src="<?php echo ($value["pic_url"]); ?>" />
+            	<li class="News_3ul1"><?php echo ($value["title"]); ?></li>
             </ul></a>
-            <a href="#"><ul class="News_3ul">
-            	<img src="images/News_3ul2.png" />
-            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
-            </ul></a>
-            <a href="#"><ul class="News_3ul">
-            	<img src="images/News_3ul3.png" />
-            	<li class="News_3ul1">居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联</li>
-            </ul></a>
-           <a href="#"> <ul class="News_3ul">
-            	<img src="images/News_3ul4.png" />
-            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
-            </ul></a>
+            <?php if ($i > 2) { break; }else $i++ ?>
+
+            <?php endforeach;?>
+
         </div>
     </div>
 </div>

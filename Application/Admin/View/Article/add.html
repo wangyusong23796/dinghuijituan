@@ -121,8 +121,12 @@
 							        if(data.status){
 							        	$("#cover_id_{$field.name}").val(data.id);
 							        	src = data.url || '__ROOT__' + data.path
+
+
+
 							        	$("#cover_id_{$field.name}").parent().find('.upload-img-box').html(
-							        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+							        		'<input type="hidden" name="pic_url" value = "'+ src +'"/>'
+							        	
 							        	);
 							        } else {
 							        	updateAlert(data.info);

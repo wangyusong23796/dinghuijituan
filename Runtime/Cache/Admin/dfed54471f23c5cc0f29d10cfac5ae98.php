@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo ($meta_title); ?>|鼎辉管理平台</title>
-    <link href="/dinghui/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" href="/dinghui/Public/Admin/css/base.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/dinghui/Public/Admin/css/common.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/dinghui/Public/Admin/css/module.css">
-    <link rel="stylesheet" type="text/css" href="/dinghui/Public/Admin/css/style.css" media="all">
-	<link rel="stylesheet" type="text/css" href="/dinghui/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
+    <link href="/ding/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/ding/Public/Admin/css/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/ding/Public/Admin/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/ding/Public/Admin/css/module.css">
+    <link rel="stylesheet" type="text/css" href="/ding/Public/Admin/css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/ding/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
      <!--[if lt IE 9]>
-    <script type="text/javascript" src="/dinghui/Public/static/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/ding/Public/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
-    <script type="text/javascript" src="/dinghui/Public/static/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="/dinghui/Public/Admin/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/ding/Public/static/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/ding/Public/Admin/js/jquery.mousewheel.js"></script>
     <!--<![endif]-->
     
 </head>
@@ -85,7 +85,7 @@
             
 
             
-	<script type="text/javascript" src="/dinghui/Public/static/uploadify/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" src="/ding/Public/static/uploadify/jquery.uploadify.min.js"></script>
 	<div class="main-title">
 		<h2><?php echo isset($info['id'])?'编辑':'新增';?>分类</h2>
 	</div>
@@ -184,7 +184,7 @@
 				    /* 初始化上传插件 */
 					$("#upload_picture").uploadify({
 				        "height"          : 30,
-				        "swf"             : "/dinghui/Public/static/uploadify/uploadify.swf",
+				        "swf"             : "/ding/Public/static/uploadify/uploadify.swf",
 				        "fileObjName"     : "download",
 				        "buttonText"      : "上传图片",
 				        "uploader"        : "<?php echo U('File/uploadPicture',array('session_id'=>session_id()));?>",
@@ -201,7 +201,7 @@
 				    	var src = '';
 				        if(data.status){
 				        	$("#icon").val(data.id);
-				        	src = data.url || '/dinghui' + data.path;
+				        	src = data.url || '/ding' + data.path;
 				        	$("#icon").parent().find('.upload-img-box').html(
 				        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
 				        	);
@@ -318,17 +318,17 @@
     <script type="text/javascript">
     (function(){
         var ThinkPHP = window.Think = {
-            "ROOT"   : "/dinghui", //当前网站地址
-            "APP"    : "/dinghui/admin.php?s=", //当前项目地址
-            "PUBLIC" : "/dinghui/Public", //项目公共目录地址
+            "ROOT"   : "/ding", //当前网站地址
+            "APP"    : "/ding/admin.php?s=", //当前项目地址
+            "PUBLIC" : "/ding/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
             "VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
         }
     })();
     </script>
-    <script type="text/javascript" src="/dinghui/Public/static/think.js"></script>
-    <script type="text/javascript" src="/dinghui/Public/Admin/js/common.js"></script>
+    <script type="text/javascript" src="/ding/Public/static/think.js"></script>
+    <script type="text/javascript" src="/ding/Public/Admin/js/common.js"></script>
     <script type="text/javascript">
         +function(){
             var $window = $(window), $subnav = $("#subnav"), url;

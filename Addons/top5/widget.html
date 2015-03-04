@@ -1,0 +1,10 @@
+
+            <div style="margin-top:8px;">
+            <volist name="data" id="value" offset="1" length='5'>
+            <a href="{:U('/Article/detail/?id='.$value['id'])}"><ul class="News_2ul">
+                    <li class="News_2ul1">0<?php echo $i ?></li>
+                    <li class="News_2ul2">{$value['title']}</li>
+                    <li class="News_2ul3">{$value['description']}</li>
+            </ul></a>
+            </volist>
+            </div>

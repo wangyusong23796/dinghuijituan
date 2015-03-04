@@ -98,12 +98,13 @@ class UcenterMemberModel extends Model{
 	 * @param  string $mobile   用户手机号码
 	 * @return integer          注册成功-用户信息，注册失败-错误编号
 	 */
-	public function register($username, $password, $email, $mobile){
+	public function register($username, $password, $email, $mobile,$name){
 		$data = array(
 			'username' => $username,
 			'password' => $password,
 			'email'    => $email,
 			'mobile'   => $mobile,
+			'name'     => $name,
 		);
 
 		//验证手机
@@ -149,6 +150,7 @@ class UcenterMemberModel extends Model{
 		if(is_array($user) && $user['status']){
 			/* 验证用户密码 */
 			if(think_ucenter_md5($password, UC_AUTH_KEY) === $user['password']){
+				session('nikename',$user['name']);
 				$this->updateLogin($user['id']); //更新用户登录信息
 				return $user['id']; //登录成功，返回用户ID
 			} else {

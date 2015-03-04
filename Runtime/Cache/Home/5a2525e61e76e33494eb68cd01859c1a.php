@@ -1,152 +1,223 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
-<html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8">
-<title><?php echo C('WEB_SITE_TITLE');?></title>
-<link href="/dinghui/Public/static/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="/dinghui/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="/dinghui/Public/static/bootstrap/css/docs.css" rel="stylesheet">
-<link href="/dinghui/Public/static/bootstrap/css/onethink.css" rel="stylesheet">
-
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-<script src="/dinghui/Public/static/bootstrap/js/html5shiv.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-<script type="text/javascript" src="/dinghui/Public/static/jquery-1.10.2.min.js"></script>
-<![endif]-->
-<!--[if gte IE 9]><!-->
-<script type="text/javascript" src="/dinghui/Public/static/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="/dinghui/Public/static/bootstrap/js/bootstrap.min.js"></script>
-<!--<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+<title><?php echo C('WEB_SITE_TITLE');?>-<?php echo ($category["title"]); ?></title>
+<link href="/ding/Public/Home/css/lists.css" rel="stylesheet" type="text/css" />
+<link href="/ding/Public/Home/css/about.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="/ding/Public/Home/js/jquery-1.7.2.js"></script>
 <!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
 <?php echo hook('pageHeader');?>
+
+<script language="javascript">  
+$(function(){
+        
+    /*top*/
+    $(".topbox_2 .topbox_2a").mouseenter(function(){
+        $(this).addClass("topbox_2aon").siblings().removeClass("topbox_2aon");
+    }).mouseleave(function(){
+        $(this).removeClass("topbox_2aon");
+    }); 
+    
+    /*导航鼠标经过事件*/
+    $(".Halo_2,.Halo_1").mouseenter(function(){
+        $(this).children().first().slideDown();
+    }).mouseleave(function(){
+        $(this).children().first().slideUp();   
+    });
+    
+    /*左导航的点击变色*/
+    $(".content_left").children().click(function(){
+        $(this).attr("class","content_left2").siblings().attr("class","content_left1");
+    });
+    
+    /**/
+    $(".news2").mouseenter(function(){
+        $(this).children().first().addClass("news2dton");
+    }).mouseleave(function(){
+        $(this).children().first().removeClass("news2dton");
+    });
+        /**/
+    $(".media").mouseenter(function(){
+        $(this).children().addClass("media3on");
+    }).mouseleave(function(){
+        $(this).children().removeClass("media3on");
+    });
+});
+
+</script>
+
 
 </head>
 <body>
 	<!-- 头部 -->
 	<!-- 导航条
 ================================================== -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="brand" href="<?php echo U('index/index');?>">OneThink</a>
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <?php $__NAV__ = M('Channel')->field(true)->where("status=1")->order("sort")->select(); if(is_array($__NAV__)): $i = 0; $__LIST__ = $__NAV__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i; if(($nav["pid"]) == "0"): ?><li>
-                            <a href="<?php echo (get_nav_url($nav["url"])); ?>" target="<?php if(($nav["target"]) == "1"): ?>_blank<?php else: ?>_self<?php endif; ?>"><?php echo ($nav["title"]); ?></a>
-                        </li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                </ul>
-            </div>
-            <div class="nav-collapse collapse pull-right">
-                <?php if(is_login()): ?><ul class="nav" style="margin-right:0">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:0;padding-right:0"><?php echo get_username();?> <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo U('User/profile');?>">修改密码</a></li>
-                                <li><a href="<?php echo U('User/logout');?>">退出</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+
+<div class="top">
+    <div class="topbox">        
+        <div class="topbox1">
+            <!--top中的内容-->
+            <a href="/ding/index.php"><div class="topbox_1"></div></a>
+            <ul class="topbox_2">
+
+
+
+
+                <?php if(is_login()): ?><li class="topbox_2a topbox_2a1" ><a href="<?php echo U('Main/index');?>"><?php echo session('nikename');?></a></li>
+                    <li class="topbox_2b">|</li>
+                    <li class="topbox_2a topbox_2a1"><a href="<?php echo U('User/logout');?>">退出</a></li>
                 <?php else: ?>
-                    <ul class="nav" style="margin-right:0">
-                        <li>
-                            <a href="<?php echo U('User/login');?>">登录</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo U('User/register');?>" style="padding-left:0;padding-right:0">注册</a>
-                        </li>
-                    </ul><?php endif; ?>
-            </div>
-        </div>
+                    <li class="topbox_2a topbox_2a1"><a href="<?php echo U("User/register");?>">快速注册</a></li>
+                    <li class="topbox_2b">|</li>
+                    <li class="topbox_2a topbox_2a1"><a href="<?php echo U("User/login");?>">立即登录</a></li><?php endif; ?>
+                <li class="topbox_2b">|</li>
+                <li class="topbox_2a"><a href="#">设为首页</a></li>
+                <li class="topbox_2b">|</li>
+                <li class="topbox_2a"><a href="#">加入收藏</a></li>
+            </ul>
+            <!--导航-->
+            <ul class="Halo">
+                <a href="/ding/index.php"><li class="Halo_1" style="width:152px; margin-left:0px;">首页</li></a>
+
+
+                <li class="Halo_2">我要理财
+                    <ul class="Halo_2a">
+                        <?php echo W('Category/lists', array('financing', true));?>
+                    </ul>
+                </li>
+                
+                <li class="Halo_2">我要借款
+                    <ul class="Halo_2a">
+                        <?php echo W('Category/lists', array('loan', true));?>
+                    </ul>
+                </li>
+
+                <li class="Halo_2">产品介绍
+                    <ul class="Halo_2a">
+                        <?php echo W('Category/lists', array('product', true));?>
+                    </ul>
+                </li>
+
+                <li class="Halo_2">最新动态
+                    <ul class="Halo_2a">
+                        <?php echo W('Category/lists', array('news', true));?>
+                    </ul>
+                </li>
+
+                <li class="Halo_2">社会责任
+                    <ul class="Halo_2a">
+                        <?php echo W('Category/lists', array('world', true));?>
+                    </ul>
+                </li>
+
+                <li class="Halo_2">关于我们
+                    <ul class="Halo_2a">
+                         <?php echo W('Category/lists', array('about', true));?>
+
+<!--                         <a href="#"><li>关于我们</li></a>
+                        <a href="#"><li>发展历程</li></a>
+                        <a href="#"><li>企业文化</li></a>
+                        <a href="#"><li>联系我们</li></a>
+                        <a href="#"><li>合作机构</li></a>
+                        <a href="#"><li>招聘信息</li></a> -->
+                    </ul>
+                </li>
+
+
+            </ul>
+            <!--导航-->
+        </div> 
     </div>
 </div>
 
 	<!-- /头部 -->
+	<!-- bannerstart -->
 	
-	<!-- 主体 -->
+	<div class="banner"></div>
+
 	
-	<header class="jumbotron subhead" id="overview">
-		<div class="container">
-			<h2>源自相同起点，演绎不同精彩！</h2>
-			<p class="lead"></p>
-		</div>
-	</header>
+	<!-- bannerend -->
 
-<div id="main-container" class="container">
-    <div class="row">
-        
-        <!-- 左侧 nav
-        ================================================== -->
-            <div class="span3 bs-docs-sidebar">
-                
-                <ul class="nav nav-list bs-docs-sidenav">
-                    <?php echo W('Category/lists', array($category['id'], ACTION_NAME == 'index'));?>
-                </ul>
-            </div>
-        
-        
-      <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
+	<!-- nav -->
+	<!--页面关系-->
 
-			<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><div class="">
-					<h3 class="ellipsis"><a href="<?php echo U('Article/detail?id='.$data['id']);?>"><?php echo ($data["title"]); ?></a></h3>
-				</div>
-				<div>
-					<p class="lead"><?php echo ($data["description"]); ?></p>
-				</div>
-				<div>
-					<span><a href="<?php echo U('Article/detail?id='.$data['id']);?>">查看全文</a></span>
-					<span class="pull-right">
-						<span class="author"><?php echo (get_username($data["uid"])); ?></span>&nbsp;&nbsp;
-						<span>发表于 <?php echo (date('Y-m-d H:i:s',$data["create_time"])); ?></span>
-						<span>阅读(<?php echo ($data["view"]); ?>)</span>&nbsp;&nbsp;
-                    </span>
-				</div>
-				<hr/><?php endforeach; endif; else: echo "" ;endif; ?>
 
-            <div class="onethink pagination pagination-right pagination-large">
-                <?php $__PAGE__ = new \Think\Page(get_list_count($category['id']), $category['list_row']);echo $__PAGE__->show(); ?>
-            </div>
-        </section>
-      </div>
+<div class="relationship">
+	<ul class="relationship_box">
+    	<li class="relationship_1"><a href="/ding/index.php">首页</a></li>
+        <li class="relationship_2">-</li>
+        <li class="relationship_1"><a href="<?php echo U('Article/index',array('category'=>$fid['name']));?>"><?php echo ($fid["title"]); ?></a></li>
+        <li class="relationship_2">-</li>
+        <li class="relationship_1"><?php echo ($category["title"]); ?></li>
+    </ul>
+</div>
 
+
+
+	<div class="content">
+        <!--左侧-->
+    <ul class="content_left">
+    	<?php echo W('Category/nav', array($category['pid'], true));?>
+    </ul>
+    
+
+	<!-- nav -->
+
+	<!-- 身体 -->
+	
+
+<!--内容-->
+
+	<!--右侧-->
+    <div class="content_right">
+    	<!--以后替换的-->
+      <div class="news">
+        	<p class="news1"><?php echo ($category["title"]); ?></p>	
+           
+
+            <?php foreach($list as $value):?>
+            <a href="<?php echo U('/Article/detail/?id='.$value['id']);?>"> <ul class="media">
+                <li class="media1" title="<?php echo ($value["title"]); ?>"><img src="<?php echo ($value["pic_url"]); ?>" /></li>
+                <li class="media2"><?php echo ($value["title"]); ?></li>
+                <li class="media3"><?php echo ($value["description"]); ?></li>
+            </ul></a>
+            <?php endforeach;?>
+
+            
+            <ul class="news3">
+                <?php echo $page;?>
+            </ul>
+
+    
+        </div>
     </div>
 </div>
 
-<script type="text/javascript">
-    $(function(){
-        $(window).resize(function(){
-            $("#main-container").css("min-height", $(window).height() - 343);
-        }).resize();
-    })
-</script>
-	<!-- /主体 -->
+
+	<!-- 身体 -->
+
+
 
 	<!-- 底部 -->
 	
     <!-- 底部
     ================================================== -->
-    <footer class="footer">
-      <div class="container">
-          <p> 本站由 <strong><a href="http://www.onethink.cn" target="_blank">王玉松</a></strong> 强力驱动</p>
-      </div>
-    </footer>
-
+<!--bottom-->
+<div class="bottom">
+	<div class="bottom_box">
+    	<div class="bottom_1"></div>
+        <div class="bottom_2">全国免费咨询电话：&nbsp;&nbsp;4009-9797-55&nbsp;（财富管理）&nbsp;&nbsp;&nbsp;&nbsp;4009-9632-55&nbsp;（借贷热线）</div>
+        <div class="bottom_3">Copyright 2014 by Shenyang Yu Yang CDH Investment Management Limited.All Right Reserved.&nbsp;&nbsp;&nbsp;&nbsp;辽ICP备00000000号</div>
+    </div>
+</div>
 <script type="text/javascript">
 (function(){
 	var ThinkPHP = window.Think = {
-		"ROOT"   : "/dinghui", //当前网站地址
-		"APP"    : "/dinghui/index.php", //当前项目地址
-		"PUBLIC" : "/dinghui/Public", //项目公共目录地址
+		"ROOT"   : "/ding", //当前网站地址
+		"APP"    : "/ding/index.php", //当前项目地址
+		"PUBLIC" : "/ding/Public", //项目公共目录地址
 		"DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
 		"MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
 		"VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]

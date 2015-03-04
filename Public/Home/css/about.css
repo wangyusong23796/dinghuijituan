@@ -1,0 +1,152 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{padding:0; margin:0; font-size:12px; font-family:"宋体"; letter-spacing:1px;}
+a{text-decoration:none;}
+img{display:block;border:none 0;}
+li{list-style:none;}
+
+/*top*/
+.top{height:80px; background-color:#F00; position:relative;}
+.topbox{height:85px; width:100%; position:absolute; top:0px; left:0px; background-image:url(../images/top.png); z-index:9;}
+.topbox1{width:1100px; height:80px; margin:auto; position:relative;}
+.topbox_1{width:171px; height:62px; float:left; background-image:url(../images/topbox_1.png); margin-top:8px;}
+.topbox_2{height:80px; float:right;}
+.topbox_2a{float:left; height:20px; line-height:20px; width:67px; border-radius:2px; text-align:center; margin-top:30px;}
+.topbox_2a a{color:#808080; letter-spacing:2px;}
+.topbox_2a1 a{color:#038bff;}
+.topbox_2aon{background-color:#038bff;}
+.topbox_2aon a{color:white;}
+.topbox_2b{float:left; height:20px; line-height:20px; margin-top:30px; color:#c3b9b1; padding:0px 2px;}
+
+/*导航*/
+.Halo{width:1100px; height:32px; position:absolute; top:80px; left:0px; z-index:-5;}
+.Halo_1{width:153px; height:32px; background-color:#004ea1; float:left; margin-left:5px; font-size:16px; font-family:"微软雅黑"; line-height:32px; letter-spacing:3px; color:white; text-align:center; background-image:url(../images/Halo_1.png); position:relative;}
+.Halo_2{width:153px; height:32px; background-color:#004ea1; float:left; margin-left:5px; font-size:16px; font-family:"微软雅黑"; line-height:32px; letter-spacing:3px; color:white; text-align:center; position:relative; cursor:pointer;}
+.Halo_2:hover{background-image:url(../images/Halo_1.png);}
+.Halo_2a{width:153px; height:auto; position:absolute; top:32px; left:0px; display:none;}
+.Halo_2a li{width:153px; height:32px; margin-top:1px; background-image:url(../images/Halo_2a.png);font-size:16px; font-family:"微软雅黑"; line-height:32px; letter-spacing:3px; color:white; text-align:center;}
+.Halo_2a li:hover{background-image:url(../images/Halo_1.png);}
+
+
+/*banner*/
+.banner{height:360px; background-image:url(../images/banner.png); background-position:center; background-repeat:no-repeat;}
+
+/*页面关系*/
+.relationship{height:auto; background-image:url(../images/relationship.png);}
+.relationship_box{width:1100px; margin:auto; overflow:hidden;}
+.relationship_1{height:37px; line-height:37px; float:left; font-size:16px; font-family:"黑体"; color:#505050;}
+.relationship_1 a{font-size:16px; font-family:"黑体"; color:#505050;}
+.relationship_1 a:hover{ color:#038bff;}
+.relationship_2{height:37px; line-height:37px; font-size:20px; padding:0px 10px; color:#505050; float:left;}
+
+/*内容*/
+.content{width:1100px; overflow:hidden; margin:auto; padding-top:20px; padding-bottom:60px;}
+/*左侧*/
+.content_left{width:182px; height:auto; float:left;}
+.content_left1{width:182px; height:50px; float:left; margin-bottom:1px; background-color:#ececec; font-size:16px; font-family:"黑体"; line-height:50px; text-align:center; color:#505050; cursor:pointer;}
+.content_left2{width:182px; height:50px; float:left; margin-bottom:1px; background-image:url(../images/content_left2.png); font-size:16px; font-family:"黑体"; line-height:50px; text-align:center; color:white;}
+.content_left1:hover{background-color:#2099fa; color:white;}
+/*右侧*/
+.content_right{width:897px; height:auto; float:left; margin-left:20px;}
+
+/*以后替换的*/
+.news{width:895px; min-height:730px; overflow:hidden; border:#e0e0e0 1px solid; padding-bottom:40px;}
+.news1{width:795px; height:78px; padding:0px 50px; line-height:88px; font-size:30px; font-family:"黑体"; color:#038bff; float:left;}
+
+/*公司简介*/
+.briefing{width:795px; height:auto; float:left; margin-left:50px;}
+
+/*公司荣誉*/
+.honour{width:795px; height:auto; float:left; margin-left:50px;}
+.honour1{width:795px; overflow:hidden; padding-bottom:30px;}
+.honour1_1{width:258px; height:173px; border:#e0e0e0 1px solid; float:left; text-align:center;}
+.honour1_1 img{max-height:173px; max-width:258px; margin:0 auto;}
+.honour1_2{width:512px; line-height:38px; font-size:16px; float:left; margin-left:20px; color:#333;}
+.honour1_3{width:512px; line-height:24px; font-size:14px; float:left; margin-left:20px; color:#878787;}
+
+/*公司简介*/
+.course_box{width:895px; height:auto; float:left;}
+.course{width:795px; overflow:hidden; padding:20px; margin-left:30px; margin-bottom:15px; background-color:#f6f6f6; }
+.course1{width:300px; height:200px; padding:2px; border:#d9d9d9 1px solid; float:left;}
+.course1 img{width:300px; height:200px;} 
+.course2{width:466px; height:33px; border-bottom:#90d2f7 1px solid; float:left; margin-left:20px;}
+.course2 dt{height:33px; line-height:33px; font-size:18px; font-family:"黑体"; float:left; color:#333;}
+.course2 dd{height:33px; line-height:33px; float:right; color:#666;}
+.course3{width:466px; line-height:28px; float:left; margin-left:20px; padding-top:5px; font-size:14px; color:#666;}
+
+
+/*企业文化*/
+.culture{width:795px; line-height:30px; font-size:16px; color:#666666; letter-spacing:2px; padding-bottom:20px;}
+.culture strong{font-size:16px; color:#121212;}
+
+/*联系我们*/
+.touch{width:795px; height:auto; font-size:16px; color:#666666; letter-spacing:2px; padding-bottom:15px;}
+.touch1{width:795px; line-height:32px; font-size:18px; font-family:"黑体"; color:#449dff; letter-spacing:3px;}
+.touch2{width:795px; line-height:28px; font-size:14px; color:#666; letter-spacing:2px;}
+
+/*合作机构*/
+.cooperative{width:795px; line-height:30px; font-size:16px; color:#666666; letter-spacing:2px; padding-bottom:20px; float:left; margin-left:50px;}
+.cooperative1{width:795px; overflow:hidden; padding:20px; float:left; margin-left:30px; margin-bottom:15px; background-color:#f6f6f6;}
+.cooperative1_1{width:228px; height:55px; border:#e0e0e0 1px solid; float:left; margin-left:280px;}
+.cooperative1_1:hover{border:#666 1px solid;}
+.cooperative1_1 img{width:228px; height:55px;}
+.cooperative1_2{width:795px; height:44px; line-height:44px; letter-spacing:3px; font-size:18px; font-family:"黑体"; text-align:center; color:#333; float:left;}
+.cooperative1_2:hover{color:#038bff;}
+.cooperative1_3{width:795px; line-height:26px; font-size:14px; color:#333; letter-spacing:2px; float:left;}
+
+.cooperative2{width:815px; overflow:hidden; float:left; margin-left:30px;}
+.cooperative2_1{width:178px; height:51px; border:#e0e0e0 1px solid; float:left; margin-left:20px; margin-bottom:20px;}
+.cooperative2_1:hover{border:#666 1px solid;}
+.cooperative2_1 img{width:178px; height:51px;}
+
+/*招聘信息*/
+.hiring{width:795px; line-height:30px; font-size:16px; color:#666666; letter-spacing:2px; float:left; margin-left:50px;}
+.hiring1{width:795px; line-height:30px; padding-top:10px; font-size:18px; font-family:"黑体"; color:#038bff; float:left; margin-left:50px;}
+.hiring2{width:795px; line-height:26px; font-size:14px; color:#666666; letter-spacing:2px; float:left; margin-left:50px;}
+.hiring3{width:795px; height:36px; float:left; overflow:hidden; padding:0px 20px; margin-left:30px; background-color:#f6f6f6; background-image:url(../images/hiring3.png); background-repeat:no-repeat; background-position:800px 15px;}
+.hiring3_03{width:795px; overflow:hidden; cursor:pointer;}
+.hiring3h{background-color:#fff;}
+.hiring3:hover{background-color:#f3faff;}
+.hiring3on{width:795px; float:left; overflow:hidden; height:auto; padding:0px 20px; margin-left:30px; background-image:url(../images/hiring3on.png); background-repeat:no-repeat; background-position:800px 15px; padding-bottom:30px;}
+
+.hiring3_1{line-height:36px; float:left; font-size:16px; font-weight:bold; letter-spacing:5px; color:#333;}
+.hiring3_2{line-height:36px; float:right; font-size:16px; font-weight:bold; letter-spacing:5px; color:#333; padding-right:15px;}
+.hiring3_3{width:795px; overflow:hidden; float:left;}
+.hiring3_3a{width:795px; height:36px; line-height:36px; font-size:14px; font-weight:bold; color:#333333;}
+.hiring3_3b{width:795px; line-height:26px; font-size:14px; color:#666;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*bottom*/
+.bottom{height:auto; background-color:#a3a3a3;}
+.bottom_box{width:1100px; overflow:hidden; margin:auto; padding-bottom:30px;}
+.bottom_1{width:193px; height:72px; background-image:url(../images/bottom_1.png); float:left; margin-top:22px;}
+.bottom_2{width:880px; line-height:20px; letter-spacing:2px; color:#f2f2f2; float:left; margin-top:45px; margin-left:20px;}
+.bottom_3{width:880px; line-height:20px; letter-spacing:2px; color:#f2f2f2; float:left; margin-left:20px;}
+
+
+
+

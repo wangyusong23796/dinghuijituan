@@ -22,7 +22,16 @@ class ArticleController extends HomeController {
 
 		//频道页只显示模板，默认不读取任何内容
 		//内容可以通过模板标签自行定制
+		$fid            =   M('category')->where('id ='.$category["pid"].'')->find();
 
+		$this->assign('fid',$fid);
+		
+		$article = D('Document')->Get_content($category['name']);
+		$content = D("Document_odd")->where('id ='.$article['id'].'')->find();
+		$data[] = $article;
+		$data[] = $content;
+		//赋值到模板
+		$this->data = $data;
 		/* 模板赋值并渲染模板 */
 		$this->assign('category', $category);
 		$this->display($category['template_index']);
@@ -32,14 +41,28 @@ class ArticleController extends HomeController {
 	public function lists($p = 1){
 		/* 分类信息 */
 		$category = $this->category();
-
+		$fid            =   M('category')->where('id ='.$category["pid"].'')->find();
+		
+		$this->assign('fid',$fid);
 		/* 获取当前分类列表 */
 		$Document = D('Document');
 		$list = $Document->page($p, $category['list_row'])->lists($category['id']);
 		if(false === $list){
 			$this->error('获取列表数据失败！');
 		}
-
+		
+		$count = $Document->where('status=1')->count();// 查询满足要求的总记录数
+		$Page = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
+		$Page->setConfig('prev','上一页');
+		$Page->setConfig('next', '下一页');
+		$Page->setConfig('first', '第一页');
+		$Page->setConfig('end','最后一页');
+		
+		$show = $Page->show();// 分页显示输出
+		$this->assign('page',$show);// 赋值分页输出
+		
+		
+		
 		/* 模板赋值并渲染模板 */
 		$this->assign('category', $category);
 		$this->assign('list', $list);
@@ -52,6 +75,9 @@ class ArticleController extends HomeController {
 		if(!($id && is_numeric($id))){
 			$this->error('文档ID错误！');
 		}
+		$fid            =   M('category')->where('id ='.$category["pid"].'')->find();
+		
+		$this->assign('fid',$fid);
 
 		/* 页码检测 */
 		$p = intval($p);
@@ -110,5 +136,27 @@ class ArticleController extends HomeController {
 			$this->error('分类不存在或被禁用！');
 		}
 	}
-
+	
+	
+	
+	
+	//单页显示
+	public function odd($category = NULL,$type = NULL)
+	{
+		$info = $this->category($category);
+		$data = array();
+		if ($info[model]['0'] != 4)
+			$this->redirect('Index/index');
+		//判断单页内容是否存在
+		if (empty($type))
+			$this->redirect('Index/index');
+		
+		$article = D('Document')->Get_content($type);
+		$content = D("Document_odd")->where('id ='.$article['id'].'')->find();
+		$data[] = $article;
+		$data[] = $content;
+		//赋值到模板
+		$this->data = $data;
+		$this->display();
+	}
 }

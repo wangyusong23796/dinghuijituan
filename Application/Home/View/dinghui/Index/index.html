@@ -1,7 +1,6 @@
 <extend name="Base/common"/>
-
-<block name="body">
-<ul class="banner">
+<block name="banner">
+    <ul class="banner">
     <li class="banner1"></li>
     <li class="banner2"></li>
     <li class="banner3"></li>
@@ -19,10 +18,16 @@
     </ul>    
 </div>
 
+</block>
 
 
 
+
+
+<block name="body">
 <!--关于我们-->
+
+
 <div class="About">
 	<div class="About_box">
     	<div class="About_1"></div>
@@ -47,49 +52,23 @@
 	<div class="News_box">
     	<div class="News_1"></div>
         <div class="News_2">
-        	<a href="#"><ul class="News_2ul" style="margin-top:8px;">
-            	<li class="News_2ul1">01</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
-           <a href="#"><ul class="News_2ul">
-            	<li class="News_2ul1">02</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿网贷交易额有望达万亿网贷交易额有望达万亿网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年许多业内人士认为是属于互联网金融发展的元年许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
-            <a href="#"><ul class="News_2ul">
-            	<li class="News_2ul1">03</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
-            <a href="#"><ul class="News_2ul">
-            	<li class="News_2ul1">04</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
-            <a href="#"><ul class="News_2ul">
-            	<li class="News_2ul1">05</li>
-                <li class="News_2ul2">2015年P2P网贷交易额有望达万亿</li>
-                <li class="News_2ul3">2013年，许多业内人士认为是属于互联网金融发展的元年，在这一</li>
-            </ul></a>
+                <!-- top5 hook -->
+                {:hook('top5')}
         </div>
         <div class="News_3">
-        	<a href="#"><ul class="News_3ul">
-            	<img src="images/News_3ul1.png" />
-            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
+            <?php $i = 0?>
+            <?php foreach($news_pic as $value):?>
+        	<a href="{:U('/Article/detail/?id='.$value['id'])}"><ul class="News_3ul">
+            	<img src="{$value.pic_url}" />
+            	<li class="News_3ul1">{$value.title}</li>
             </ul></a>
-            <a href="#"><ul class="News_3ul">
-            	<img src="images/News_3ul2.png" />
-            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
-            </ul></a>
-            <a href="#"><ul class="News_3ul">
-            	<img src="images/News_3ul3.png" />
-            	<li class="News_3ul1">居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联居民现场求联</li>
-            </ul></a>
-           <a href="#"> <ul class="News_3ul">
-            	<img src="images/News_3ul4.png" />
-            	<li class="News_3ul1">【沈阳晚报·鼎辉杯】居民现场求联</li>
-            </ul></a>
+            <?php if ($i > 2) {
+                break;
+            }else $i++
+            ?>
+
+            <?php endforeach;?>
+
         </div>
     </div>
 </div>

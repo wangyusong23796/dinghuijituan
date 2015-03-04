@@ -1,0 +1,75 @@
+<extend name="Base/news_tem"/>
+
+
+<block name="head">
+<title>{:C('WEB_SITE_TITLE')}-{$category.title}</title>
+<link href="__CSS__/lists.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="__JS__/jquery-1.7.2.js"></script>
+<!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
+{:hook('pageHeader')}
+
+<script language="javascript">  
+$(function(){
+        
+    /*top*/
+    $(".topbox_2 .topbox_2a").mouseenter(function(){
+        $(this).addClass("topbox_2aon").siblings().removeClass("topbox_2aon");
+    }).mouseleave(function(){
+        $(this).removeClass("topbox_2aon");
+    }); 
+    
+    /*导航鼠标经过事件*/
+    $(".Halo_2,.Halo_1").mouseenter(function(){
+        $(this).children().first().slideDown();
+    }).mouseleave(function(){
+        $(this).children().first().slideUp();   
+    });
+    
+    /*左导航的点击变色*/
+    $(".content_left").children().click(function(){
+        $(this).attr("class","content_left2").siblings().attr("class","content_left1");
+    });
+    
+    /**/
+    $(".news2").mouseenter(function(){
+        $(this).children().first().addClass("news2dton");
+    }).mouseleave(function(){
+        $(this).children().first().removeClass("news2dton");
+    });
+});
+
+</script>
+</block>
+
+<block name="banner">
+	<div class="banner"></div>
+</block>
+
+<block name="body">
+
+<!--内容-->
+
+	<!--右侧-->
+    <div class="content_right">
+    	<!--以后替换的-->
+      <div class="news">
+        	<p class="news1">{$category.title}</p>	
+           
+
+            <?php foreach($list as $value):?>
+            <a href="{:U('/Article/detail/?id='.$value['id'])}"><dl class="news2">            
+                <dt class="news2dt">{$value.title}</dt>
+                <dd>20{$value.create_time|date="y-m-d",###}</dd>            
+            </dl></a> 
+
+            <?php endforeach;?>
+
+            <ul class="news3">
+                {:$page}
+            </ul>
+    
+        </div>
+    </div>
+</div>
+
+</block>

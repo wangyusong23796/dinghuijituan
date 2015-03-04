@@ -320,5 +320,12 @@ class DocumentModel extends Model{
 
         return $map;
     }
+    
+    //获取指定文档
+    //可以使用标示也可以使用id
+    public function Get_content($id)
+    {
+    	return $this->where('name="'.$id.'"')->find();
+    }
 
 }

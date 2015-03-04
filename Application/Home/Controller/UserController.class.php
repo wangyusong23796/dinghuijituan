@@ -16,13 +16,10 @@ use User\Api\UserApi;
  */
 class UserController extends HomeController {
 
-	/* 用户中心首页 */
-	public function index(){
-		
-	}
+
 
 	/* 注册页面 */
-	public function register($username = '', $password = '', $repassword = '', $email = '', $verify = ''){
+	public function register($username = '', $password = '', $repassword = '', $email = '', $verify = '',$mobile='',$name=''){
         if(!C('USER_ALLOW_REGISTER')){
             $this->error('注册已关闭');
         }
@@ -39,7 +36,7 @@ class UserController extends HomeController {
 
 			/* 调用注册接口注册用户 */
             $User = new UserApi;
-			$uid = $User->register($username, $password, $email);
+			$uid = $User->register($username, $password, $email,$mobile,$name);
 			if(0 < $uid){ //注册成功
 				//TODO: 发送验证邮件
 				$this->success('注册成功！',U('login'));
@@ -99,8 +96,10 @@ class UserController extends HomeController {
 
 	/* 验证码，用于登录和注册 */
 	public function verify(){
-		$verify = new \Think\Verify();
-		$verify->entry(1);
+			
+			ob_clean();
+		    $Verify = new \Think\Verify();
+    		$Verify->entry(1);
 	}
 
 	/**

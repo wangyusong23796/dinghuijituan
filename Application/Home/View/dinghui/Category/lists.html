@@ -1,15 +1,26 @@
+
 <volist name="category" id="cate">
 	<eq name="current" value="$cate['id']">
-		<li class="active">
-			<a href="{:U('Article/lists?category='.$cate['name'])}">
-				<i class="icon-chevron-right"></i>{$cate.title}
-			</a>
-		</li>
-	<else/>
+		<a href="{:U('Article/lists?category='.$cate['name'])}">
 		<li>
-			<a href="{:U('Article/lists?category='.$cate['name'])}">
-				<i class="icon-chevron-right"></i>{$cate.title}
-			</a>
+				{$cate.title}
 		</li>
+		</a>
+	<else/>
+			<if condition="($cate['model'] eq 4)">
+				<a href="{:U('Article/index?category='.$cate['name'])}">
+				<li>
+					{$cate.title}
+				</li>
+				</a>
+			<else/>
+				<a href="{:U('Article/lists?category='.$cate['name'])}">
+				<li>
+						{$cate.title}
+				</li>
+				</a>
+			</if>
+			
+
 	</eq>
 </volist>

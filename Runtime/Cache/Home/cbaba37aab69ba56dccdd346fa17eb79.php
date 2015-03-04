@@ -1,218 +1,180 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
-<html>
+<?php if (!defined('THINK_PATH')) exit();?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8">
-<title><?php echo C('WEB_SITE_TITLE');?></title>
-<link href="/dinghui/Public/static/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="/dinghui/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="/dinghui/Public/static/bootstrap/css/docs.css" rel="stylesheet">
-<link href="/dinghui/Public/static/bootstrap/css/onethink.css" rel="stylesheet">
-
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-<script src="/dinghui/Public/static/bootstrap/js/html5shiv.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-<script type="text/javascript" src="/dinghui/Public/static/jquery-1.10.2.min.js"></script>
-<![endif]-->
-<!--[if gte IE 9]><!-->
-<script type="text/javascript" src="/dinghui/Public/static/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="/dinghui/Public/static/bootstrap/js/bootstrap.min.js"></script>
-<!--<![endif]-->
-<!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
-<?php echo hook('pageHeader');?>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>鼎辉集团--注册</title>
+<link href="/ding/Public/Home/css/login.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="/ding/Public/Home/js/jquery-1.7.2.js"></script>
+<script language="javascript" src="/ding/Public/Home/js/jqrury-index.js"></script>
 </head>
-<body>
-	<!-- 头部 -->
-	<!-- 导航条
-================================================== -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="brand" href="<?php echo U('index/index');?>">OneThink</a>
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <?php $__NAV__ = M('Channel')->field(true)->where("status=1")->order("sort")->select(); if(is_array($__NAV__)): $i = 0; $__LIST__ = $__NAV__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i; if(($nav["pid"]) == "0"): ?><li>
-                            <a href="<?php echo (get_nav_url($nav["url"])); ?>" target="<?php if(($nav["target"]) == "1"): ?>_blank<?php else: ?>_self<?php endif; ?>"><?php echo ($nav["title"]); ?></a>
-                        </li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                </ul>
-            </div>
-            <div class="nav-collapse collapse pull-right">
-                <?php if(is_login()): ?><ul class="nav" style="margin-right:0">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:0;padding-right:0"><?php echo get_username();?> <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo U('User/profile');?>">修改密码</a></li>
-                                <li><a href="<?php echo U('User/logout');?>">退出</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                <?php else: ?>
-                    <ul class="nav" style="margin-right:0">
-                        <li>
-                            <a href="<?php echo U('User/login');?>">登录</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo U('User/register');?>" style="padding-left:0;padding-right:0">注册</a>
-                        </li>
-                    </ul><?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div>
+<script language="javascript">	
 
-	<!-- /头部 -->
+$(function(){
+	$(".register_box input").focus(function(){
+		$(this).next().children().first().show().siblings().hide();
+	}).blur(function(){
+		$(this).next().children().first().hide();
+		$(this).next().children().eq(2).show();
+	});
 	
-	<!-- 主体 -->
+	/*二维码的显示和隐藏*/
+	$(".bottom1_b").children().eq(1).click(function(){
+		$(".weiwei").show();
+		$(".bottom1_b").children().eq(1).addClass("bottom1_b2a");
+	});
+	$(".weiwei_button").click(function(){
+		$(".weiwei").hide();
+		$(".bottom1_b").children().eq(1).removeClass("bottom1_b2a");
+	});
 	
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h2>用户注册</h2>
-    <p><span><span class="pull-left"><span>已经有账号? <a href="<?php echo U('User/login');?>">点此登录</a> </span> </span></p>
-  </div>
-</header>
-
-<div id="main-container" class="container">
-    <div class="row">
-         
-        
-
-<section>
-	<div class="span12">
-        <form class="login-form" action="/dinghui/index.php/User/register.html" method="post">
-          <div class="control-group">
-            <label class="control-label" for="inputEmail">用户名</label>
-            <div class="controls">
-              <input type="text" id="inputEmail" class="span3" placeholder="请输入用户名"  ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名" nullmsg="请填写用户名" datatype="*1-16" value="" name="username">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">密码</label>
-            <div class="controls">
-              <input type="password" id="inputPassword"  class="span3" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">确认密码</label>
-            <div class="controls">
-              <input type="password" id="inputPassword" class="span3" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" name="repassword">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputEmail">邮箱</label>
-            <div class="controls">
-              <input type="text" id="inputEmail" class="span3" placeholder="请输入电子邮件"  ajaxurl="/member/checkUserEmailUnique.html" errormsg="请填写正确格式的邮箱" nullmsg="请填写邮箱" datatype="e" value="" name="email">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">验证码</label>
-            <div class="controls">
-              <input type="text" id="inputPassword" class="span3" placeholder="请输入验证码"  errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label"></label>
-            <div class="controls">
-                <img class="verifyimg reloadverify" alt="点击切换" src="<?php echo U('verify');?>" style="cursor:pointer;">
-            </div>
-            <div class="controls Validform_checktip text-warning"></div>
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <button type="submit" class="btn">注 册</button>
-            </div>
-          </div>
-        </form>
-	</div>
-</section>
+	$(".bottom1_b").children().eq(0).click(function(){
+		$(".xinxin").show();
+		$(".bottom1_b").children().eq(0).addClass("bottom1_b1a");
+	});
+	$(".xinxin_button").click(function(){
+		$(".xinxin").hide();
+		$(".bottom1_b").children().eq(0).removeClass("bottom1_b1a");
+	});
 
 
-    </div>
-</div>
 
-<script type="text/javascript">
-    $(function(){
-        $(window).resize(function(){
-            $("#main-container").css("min-height", $(window).height() - 343);
-        }).resize();
+        $(".verifyimg").click(function(){
+        var id = Math.floor(Math.random()*1000);
+        $(".verifyimg").attr("src", "/ding/index.php/User/verify?id=11" + id);
     })
-</script>
-	<!-- /主体 -->
 
-	<!-- 底部 -->
 	
-    <!-- 底部
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-          <p> 本站由 <strong><a href="http://www.onethink.cn" target="_blank">王玉松</a></strong> 强力驱动</p>
-      </div>
-    </footer>
+});
 
-<script type="text/javascript">
-(function(){
-	var ThinkPHP = window.Think = {
-		"ROOT"   : "/dinghui", //当前网站地址
-		"APP"    : "/dinghui/index.php", //当前项目地址
-		"PUBLIC" : "/dinghui/Public", //项目公共目录地址
-		"DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
-		"MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
-		"VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
-	}
-})();
 </script>
 
-	<script type="text/javascript">
-    	$(document)
-	    	.ajaxStart(function(){
-	    		$("button:submit").addClass("log-in").attr("disabled", true);
-	    	})
-	    	.ajaxStop(function(){
-	    		$("button:submit").removeClass("log-in").attr("disabled", false);
-	    	});
-
-
-    	$("form").submit(function(){
-    		var self = $(this);
-    		$.post(self.attr("action"), self.serialize(), success, "json");
-    		return false;
-
-    		function success(data){
-    			if(data.status){
-    				window.location.href = data.url;
-    			} else {
-    				self.find(".Validform_checktip").text(data.info);
-    				//刷新验证码
-    				$(".reloadverify").click();
-    			}
-    		}
-    	});
-
-		$(function(){
-			var verifyimg = $(".verifyimg").attr("src");
-            $(".reloadverify").click(function(){
-                if( verifyimg.indexOf('?')>0){
-                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
-                }else{
-                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
-                }
-            });
-		});
-	</script>
- <!-- 用于加载js代码 -->
-<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
-<?php echo hook('pageFooter', 'widget');?>
-<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
-	
+<body style="background-color:#555555;">
+<!--top-->
+<div class="one_first"></div>
+<div class="top">
+	<div class="topbox">
+    	<div class="topbox_1"></div>
+        <div class="topbox_2"></div>
+        <p class="topbox_3">注册</p>
+    </div>
 </div>
 
-	<!-- /底部 -->
+<!--Registration-->
+<div style="background-color:#f2f2f2; padding-bottom:80px;">
+    <div class="Registration">
+      <ul class="register1">
+            <li class="register1_a">注册新会员</li>
+            <li class="register1_b">已有帐号？&nbsp;<a href="<?php echo U('User/login');?>">直接登录</a></li>
+        </ul>
+        <form action="/ding/index.php/User/register.html" method="post">
+        <div class="register_box">
+          <P class="register_box1"><span>*</span>登录账户：</P>
+          <input class="register_box2" name="username" type="text" />
+          <ul  class="register_box3">
+                <li class="register_box3a">4-20位字符，支持字母、数字、下划线。不支持特殊字符。如@#￥%等</li>
+                <li class="register_box3b">您输入的密码不正确请重新输入</li>
+                <li class="register_box3c"></li>
+            </ul>
+        </div>
+        <div class="register_box">
+            <P class="register_box1"><span>*</span>登录密码：</P>
+            <input class="register_box2" name="password" type="password" />
+            <ul  class="register_box3">
+              <li class="register_box3a">4-20位字符，支持字母、数字、下划线。不支持特殊字符。如@#￥%等</li>
+                <li class="register_box3b">您输入的密码不正确请重新输入</li>
+                <li class="register_box3c"></li>
+            </ul>
+        </div>
+        <div class="register_box">
+            <P class="register_box1"><span>*</span>确认密码：</P>
+            <input class="register_box2" name="repassword" type="password" />
+            <ul  class="register_box3">
+              <li class="register_box3a">4-20位字符，支持字母、数字、下划线。不支持特殊字符。如@#￥%等</li>
+                <li class="register_box3b">您输入的密码不正确请重新输入</li>
+                <li class="register_box3c"></li>
+            </ul>
+        </div>
+        <div class="register_box">
+            <P class="register_box1"><span>*</span>账户昵称：</P>
+            <input class="register_box2" name="name" type="text" />
+            <ul  class="register_box3">
+              <li class="register_box3a">4-20位字符，支持字母、数字、下划线。不支持特殊字符。如@#￥%等</li>
+                <li class="register_box3b">您输入的密码不正确请重新输入</li>
+                <li class="register_box3c"></li>
+            </ul>
+        </div>
+        <div class="register_box">
+            <P class="register_box1"><span>*</span>手机号码：</P>
+            <input class="register_box2" name="mobile" type="text" />
+            <ul  class="register_box3">
+              <li class="register_box3a">4-20位字符，支持字母、数字、下划线。不支持特殊字符。如@#￥%等</li>
+                <li class="register_box3b">您输入的密码不正确请重新输入</li>
+                <li class="register_box3c"></li>
+            </ul>
+        </div>
+        <div class="register_box">
+            <P class="register_box1"><span>*</span>邮箱帐号：</P>
+            <input class="register_box2" name="email" type="text" />
+            <ul  class="register_box3">
+              <li class="register_box3a">4-20位字符，支持字母、数字、下划线。不支持特殊字符。如@#￥%等</li>
+                <li class="register_box3b">您输入的密码不正确请重新输入</li>
+                <li class="register_box3c"></li>
+            </ul>
+        </div>
+        <input type="text" id="inputPassword" class="span3" placeholder="请输入验证码"  errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify">
+        <img alt="点击切换" src="<?php echo U('User/verify');?>" style="cursor:pointer;" class="verifyimg">
+        
+        <div class="register_div">
+          <p><input type="checkbox" name="CheckboxGroup1" value="复选框" id="CheckboxGroup1_1" />&nbsp;我同意<a href="#">《鼎辉财富服务协议》</a></p>
+        </div>
+        
+        <div class="register_button">
+            <input class="register_button1" name="" type="submit" value="立即注册" />
+           
+        </div>
+        </form>
+    </div>
+</div>
+<!--bottom-->
+<div class="bottom1">
+	<dl class="bottom1_a">
+        <dd><a href="#">借款咨询</a></dd>
+        <dd><a href="#">我要理财</a></dd>
+        <dd><a href="#">产品介绍</a></dd>
+        <dd><a href="#">最新动态</a></dd>
+        <dd><a href="#">媒体报道</a></dd>
+        <dd><a href="#">行业新闻</a></dd>
+        <dd><a href="#">社会责任</a></dd>
+        <dd><a href="#">志愿者</a></dd>
+        <dd><a href="#">公司简介</a></dd>
+        <dd><a href="#">发展历程</a></dd>
+        <dd><a href="#">企业文化</a></dd>
+        <dd><a href="#">联系方式</a></dd>
+    </dl>
+    <ul class="bottom1_b">
+    	<li class="bottom1_b1"></li>
+        <li class="bottom1_b2"></li>
+    </ul>
+</div>
+<div style="height:1px; background-color:#636363;"></div>
+<div class="bottom3">
+	<div class="bottom3_left"></div>
+    <div class="bottom3_right">
+    	<p class="bottom3_right1">全国免费咨询电话：&nbsp;4009-9797-55&nbsp;（财富管理）&nbsp;&nbsp;&nbsp;&nbsp;4009-9632-55&nbsp;（借贷热线）</p>
+        <p class="bottom3_right2">Copyright 2014 by Shenyang Yu Yang CDH Investment Management Limited.All Right Reserved.&nbsp;&nbsp;&nbsp;辽ICP备00000000号</p>
+    </div>
+</div>
+
+<!--二维码-->
+<div class="weiwei">
+	<input class="weiwei_button" name="" type="button" />
+</div>
+
+<div class="xinxin">
+	<input class="xinxin_button" name="" type="button" />
+</div>
+
 </body>
+
 </html>

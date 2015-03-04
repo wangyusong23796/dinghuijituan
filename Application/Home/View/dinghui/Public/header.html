@@ -1,14 +1,25 @@
 <!-- 导航条
 ================================================== -->
+<block name="header">
 <div class="top">
     <div class="topbox">        
         <div class="topbox1">
             <!--top中的内容-->
-            <a href="#"><div class="topbox_1"></div></a>
+            <a href="__APP__"><div class="topbox_1"></div></a>
             <ul class="topbox_2">
-                <li class="topbox_2a topbox_2a1"><a href="#">快速注册</a></li>
-                <li class="topbox_2b">|</li>
-                <li class="topbox_2a topbox_2a1"><a href="#">立即登录</a></li>
+
+
+
+
+                <if condition="is_login()">
+                    <li class="topbox_2a topbox_2a1" ><a href="{:U('Main/index')}">{:session('nikename')}</a></li>
+                    <li class="topbox_2b">|</li>
+                    <li class="topbox_2a topbox_2a1"><a href="{:U('User/logout')}">退出</a></li>
+                <else/>
+                    <li class="topbox_2a topbox_2a1"><a href="{:U("User/register")}">快速注册</a></li>
+                    <li class="topbox_2b">|</li>
+                    <li class="topbox_2a topbox_2a1"><a href="{:U("User/login")}">立即登录</a></li>
+                </if>
                 <li class="topbox_2b">|</li>
                 <li class="topbox_2a"><a href="#">设为首页</a></li>
                 <li class="topbox_2b">|</li>
@@ -16,52 +27,56 @@
             </ul>
             <!--导航-->
             <ul class="Halo">
-                <a href="#"><li class="Halo_1" style="width:152px; margin-left:0px;">首页</li></a>
+                <a href="__APP__"><li class="Halo_1" style="width:152px; margin-left:0px;">首页</li></a>
+
+
                 <li class="Halo_2">我要理财
                     <ul class="Halo_2a">
-                        <a href="#"><li>如何理财</li></a>
-                        <a href="#"><li>我要理财</li></a>
+                        {:W('Category/lists', array('financing', true))}
                     </ul>
                 </li>
+                
                 <li class="Halo_2">我要借款
                     <ul class="Halo_2a">
-                        <a href="#"><li>我要借款</li></a>
-                        <a href="#"><li>如何借款</li></a>
+                        {:W('Category/lists', array('loan', true))}
                     </ul>
                 </li>
+
                 <li class="Halo_2">产品介绍
                     <ul class="Halo_2a">
-                        <a href="#"><li>产品介绍</li></a>
+                        {:W('Category/lists', array('product', true))}
                     </ul>
                 </li>
+
                 <li class="Halo_2">最新动态
                     <ul class="Halo_2a">
-                        <a href="#"><li>最新动态</li></a>
-                        <a href="#"><li>媒体报道</li></a>
-                        <a href="#"><li>行业新闻</li></a>
-                        <a href="#"><li>专题报道</li></a>
+                        {:W('Category/lists', array('news', true))}
                     </ul>
                 </li>
+
                 <li class="Halo_2">社会责任
                     <ul class="Halo_2a">
-                        <a href="#"><li>社会责任动态</li></a>
-                        <a href="#"><li>社会责任理念</li></a>
-                        <a href="#"><li>社会责任项目</li></a>
-                        <a href="#"><li>志愿者</li></a>
+                        {:W('Category/lists', array('world', true))}
                     </ul>
                 </li>
+
                 <li class="Halo_2">关于我们
                     <ul class="Halo_2a">
-                        <a href="#"><li>关于我们</li></a>
+                         {:W('Category/lists', array('about', true))}
+
+<!--                         <a href="#"><li>关于我们</li></a>
                         <a href="#"><li>发展历程</li></a>
                         <a href="#"><li>企业文化</li></a>
                         <a href="#"><li>联系我们</li></a>
                         <a href="#"><li>合作机构</li></a>
-                        <a href="#"><li>招聘信息</li></a>
+                        <a href="#"><li>招聘信息</li></a> -->
                     </ul>
                 </li>
+
+
             </ul>
             <!--导航-->
         </div> 
     </div>
 </div>
+</block>
